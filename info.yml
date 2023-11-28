@@ -1,0 +1,20 @@
+project:
+  name: 'CS169-fa23-53'
+  owner: 'fa23'
+  teamId: '53'
+  identities: {}
+  notifications:
+    email: 'matei.gardea@berkeley.edu'
+  members:
+    member1:
+      name: 'matei'
+      surname: 'Gardea' 
+      githubUsername: 'mgberkeley'
+    member2:
+      name: 'Audrey'
+      surname: 'Choi' 
+      githubUsername: 'audreyachoi'
+    member3:
+      name: 'Amy'
+      surname: 'Mathews' 
+      githubUsername: 'amymathews'
