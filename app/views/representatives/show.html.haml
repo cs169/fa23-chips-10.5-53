@@ -1,0 +1,11 @@
+:css
+    img.displayed {display: block}
+.overview
+    %img.displayed{ src: @representative.photo, width: '100', height: '100' }
+    - if @representative.photo.blank?
+        %h5.text-center No image available
+    %h1.text-center= @representative.name
+    %h1.text-center= @representative.ocdid
+    %h1.text-center= @representative.title
+    %h1.text-center= @representative.party
+    %h1.text-center= @representative.address.split('\n').join "\n"
