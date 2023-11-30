@@ -18,7 +18,15 @@ class Representative < ApplicationRecord
       end
 
       rep = Representative.find_or_initialize_by(name: official.name, ocdid: ocdid_temp)
+      
       rep.title = title_temp
+      rep.street = official.address ? official.address[0]&.line1 : ''
+      rep.city = official.address ? official.address[0]&.city : ''
+      rep.state = official.address ? official.address[0]&.state : ''
+      rep.zip = official.address ? official.address[0]&.zip : ''
+      rep.party = official.party ? official.party : ''
+      rep.photo_url = official.photo_url ? official.photo_url : ''
+  
       rep.save!
       reps.push(rep)
     end

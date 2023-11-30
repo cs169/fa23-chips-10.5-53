@@ -1,47 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Representative Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .profile-info {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .profile-info span {
-            display: inline-block;
-            min-width: 120px;
-            text-align: right;
-        }
-        .profile-info div {
-            display: inline-block;
-            text-align: left;
-            margin-left: 20px;
-        }
-        img {
-            max-width: 200px;
-            height: auto;
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1><%= @representative.name %></h1>
-        <img src="<%= @representative.photo_url %>" alt="Profile picture of <%= @representative.name %>">
-        <div class="profile-details">
-            <div class="profile-info"><span>OCD ID:</span><div><%= @representative.ocdid %></div></div>
-            <div class="profile-info"><span>Title:</span><div><%= @representative.title %></div></div>
-            <div class="profile-info"><span>Party:</span><div><%= @representative.party %></div></div>
-            <div class="profile-info"><span>Address:</span><div><%= "#{@representative.street}, #{@representative.city}, #{@representative.state} #{@representative.zip}" %></div></div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @representative.name %></h1>
+      <% if @representative.photo_url.present? %>
+        <img src="<%= @representative.photo_url %>" class="img-thumbnail mb-3">
+      <% end %>
+
+      <h3><%= @representative.title %></h3>
+      <p>Party: <%= @representative.party %></p>
+      <p>Address: <%= @representative.street %>, <%= @representative.city %>, <%= @representative.state %> <%= @representative.zip %></p>
     </div>
-</body>
-</html>
+  </div>
+</div>
