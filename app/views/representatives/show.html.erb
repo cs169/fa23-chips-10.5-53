@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @representative.name %></h1>
+      <% if @representative.photo_url.present? %>
+        <img src="<%= @representative.photo_url %>" class="img-thumbnail mb-3">
+      <% end %>
+
+      <h3><%= @representative.title %></h3>
+      <p>Party: <%= @representative.party %></p>
+      <p>Address: <%= @representative.street %>, <%= @representative.city %>, <%= @representative.state %> <%= @representative.zip %></p>
+    </div>
+  </div>
+</div>
