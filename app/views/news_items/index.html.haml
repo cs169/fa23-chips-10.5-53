@@ -14,8 +14,8 @@
                         All Representatives
             .table-responsive-md
                 %table.table.table-striped.table-hover#events
-                    %caption 
-                        Table of News Items for 
+                    %caption
+                        Table of News Items for
                         = link_to @representative.name, representative_path(@representative)
                     %thead.thead-dark
                         %tr
@@ -29,7 +29,7 @@
                             %tr
                                 %td= index + 1
                                 %td
-                                    %a{ href: item.link, target: "_blank" }
+                                    %a{ href: item.link, target: '_blank' }
                                         = item.title
                                         &nbsp;
                                         %i.fas.fa-external-link-alt
