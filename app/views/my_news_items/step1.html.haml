@@ -1,0 +1,19 @@
+= form_with url: representative_new_my_news_item_step2_path, method: :get, local: true do
+  .row.mt-2
+    .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
+      %h1 Select Representative and Issue
+
+    .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
+      .form-group.row
+        .col-sm-2
+          = label :news_item, :representative_id, class: 'col-form-label'
+        .col-sm-10
+          = select :news_item, :representative_id, @representatives_list, { include_blank: true }, class: 'form-control'
+      .form-group.row
+        .col-sm-2
+          = label :news_item, :issue, 'Issue:', class: 'col-form-label'
+        .col-sm-10
+          = select :news_item, :issue, ["Free Speech", "Immigration", "Terrorism", "Social Security and Medicare", "Abortion", "Student Loans", "Gun Control", "Unemployment", "Climate Change", "Homelessness", "Racism", "Tax Reform", "Net Neutrality", "Religious Freedom", "Border Security", "Minimum Wage", "Equal Pay"], include_blank: 'Select Issue', class: 'form-control'
+
+    .actions
+      = submit_tag 'Next', class: 'btn btn-primary'
