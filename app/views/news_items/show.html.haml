@@ -25,6 +25,11 @@
                     %dt.col-sm-3.text-md-right Last Updated:
                     %dt.col-sm-9
                         %time.timeago{ datetime: @news_item.updated_at.iso8601 }
+                %dl.row
+                    %dt.col-sm-3.text-md-right Issue:
+                    %dt.col-sm-9
+                        = @news_item.issue
+
     .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
         .clearfix
             .float-right
