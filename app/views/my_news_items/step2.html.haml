@@ -1,23 +1,23 @@
 = form_with url: representative_new_my_news_item_save_path, method: :post do
-  %fieldset
-    %legend Select an Article
+    %fieldset
+        %legend Select an Article
 
-    - @articles.each_with_index do |article, index|
-      .radio
-        = label_tag "article_#{index}" do
-          = radio_button_tag 'news_item[selected_article]', index
-          %strong= article[:title]
-          %p= article[:description]
+        - @articles.each_with_index do |article, index|
+            .radio
+                = label_tag "article_#{index}" do
+                    = radio_button_tag 'news_item[selected_article]', index
+                    %strong= article[:title]
+                    %p= article[:description]
 
-        = hidden_field_tag "news_item[articles][#{index}][title]", article[:title]
-        = hidden_field_tag "news_item[articles][#{index}][description]", article[:description]
-        = hidden_field_tag "news_item[articles][#{index}][link]", article[:url]
+                = hidden_field_tag "news_item[articles][#{index}][title]", article[:title]
+                = hidden_field_tag "news_item[articles][#{index}][description]", article[:description]
+                = hidden_field_tag "news_item[articles][#{index}][link]", article[:url]
 
-    .form-group
-      = label_tag 'news_item[rating]', 'Rating:'
-      = select_tag 'news_item[rating]', options_for_select(1..5), include_blank: true, class: 'form-control'
+        .form-group
+            = label_tag 'news_item[rating]', 'Rating:'
+            = select_tag 'news_item[rating]', options_for_select(1..5), include_blank: true, class: 'form-control'
 
-    = hidden_field_tag 'news_item[representative_id]', @representative.id
-    = hidden_field_tag 'news_item[issue]', @issue
+        = hidden_field_tag 'news_item[representative_id]', @representative.id
+        = hidden_field_tag 'news_item[issue]', @issue
 
-    = submit_tag 'Save', class: 'btn btn-primary'
+        = submit_tag 'Save', class: 'btn btn-primary'

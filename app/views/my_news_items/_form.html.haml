@@ -2,7 +2,7 @@
     - if news_item.errors.any?
         .alert.alert-danger
             %h2
-                "#{pluralize(news_item.errors.count, 'error')} prohibited this news from being saved:"
+                '#{pluralize(news_item.errors.count, 'error')} prohibited this news from being saved:'
             %ul
                 - news_item.errors.full_messages.each do |message|
                     %li= message
@@ -32,7 +32,7 @@
         .col-sm-2
             = label :news_item, :issue, 'Issue:', class: 'col-form-label'
         .col-sm-10
-            = select :news_item, :issue, ["Free Speech", "Immigration", "Terrorism", "Social Security and Medicare", "Abortion", "Student Loans", "Gun Control", "Unemployment", "Climate Change", "Homelessness", "Racism", "Tax Reform", "Net Neutrality", "Religious Freedom", "Border Security", "Minimum Wage", "Equal Pay"], include_blank: 'Select Issue', class: 'form-control'
+            = select :news_item, :issue, issues, include_blank: 'Select Issue', class: 'form-control'
 
     .actions
         = f.submit 'Save', class: 'btn btn-primary'
